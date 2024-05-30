@@ -26,10 +26,10 @@ class PrincipalWidget extends StatelessWidget {
             SizedBox(
             height: size.height * 0.01,
           ),
-          SingleChildScrollView(
-            child: Container(
-              padding: const EdgeInsets.all(5),
-              color: Colors.white,
+          Container(
+            padding: const EdgeInsets.all(5),
+            color: Colors.white,
+            child: SingleChildScrollView(
               child: Column(
                 children: [
                   Text('Hola soy Cristian!👋🏻',

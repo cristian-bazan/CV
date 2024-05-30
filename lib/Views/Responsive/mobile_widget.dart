@@ -8,8 +8,8 @@ class MobileWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     //final size = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Cristian Hernán Bazan'),
+      appBar: AppBar(//sliverAppBar
+        title: const Center(child: Text('Cristian Hernán Bazan')),
         backgroundColor: Colors.indigo,
       ),
       body: SingleChildScrollView(
