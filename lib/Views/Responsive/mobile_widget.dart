@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:portfolio_cristian_bazan/Widgets/widget.dart';
 
 class MobileWidget extends StatelessWidget {
@@ -8,26 +9,25 @@ class MobileWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     //final size = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: AppBar(//sliverAppBar
+      /*appBar: AppBar(
         title: const Center(child: Text('Cristian Hernán Bazan')),
         backgroundColor: Colors.indigo,
-      ),
-      body: SingleChildScrollView(
-        controller: ScrollController(),
-        child: Column(
-          children: [
-            const PrincipalWidget(),
-            Padding(
-            padding: const EdgeInsets.all(8),
-            child: AspectRatio(
-              aspectRatio: 16/9,
-              child: Container(
-                color: Colors.black,
-              ),
-              ),
-            )]
-        ),
-      ),
-    );
+      ),*/
+      body: CustomScrollView(
+        physics: const BouncingScrollPhysics(),
+        slivers: [
+          SliverAppBar(
+            flexibleSpace: FlexibleSpaceBar(
+              title: const Text('Cristian Hernán Bazan'),
+              background: Container(color: Colors.redAccent,),
+            ),
+          ),
+          SliverList(
+            delegate: SliverChildListDelegate([
+              const PrincipalWidget(),
+            ]),
+            )
+        ],
+      ));
   }
 }
